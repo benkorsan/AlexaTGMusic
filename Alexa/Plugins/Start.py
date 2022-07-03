@@ -39,18 +39,17 @@ __HELP__ = """
 
 
 /start 
-- Start the Bot.
+- Botu başlatın.
 
 
 /help 
-- Get Commands Helper Menu.
+- Komutlar Yardımcısı menüsünü alın.
 
 
 /settings 
-- Get Settings button.
+- Ayarlar düğmesini alın.
 
-- ᴘᴏᴡᴇʀᴅ ʙʏ 😍 ʀᴏᴄᴋs ᴀɴᴅ @AsadSupport.
-"""
+- 🚶🍂👣🌿
 
 
 @app.on_message(filters.new_chat_members, group=welcome_group)
@@ -85,7 +84,7 @@ async def welcome(_, message: Message):
                 ) = await get_assistant_details(ran_ass)
                 out = start_pannel()
                 await message.reply_text(
-                    f"Welcome To {MUSIC_BOT_NAME}\n\nPromote me as administrator in your group otherwise I will not function properly.\n\nAssistant Username:- @{ASS_USERNAME}\nAssistant ID:- {ASS_ID}",
+                    f"Hoşgeldiniz {MUSIC_BOT_NAME}\n\nBeni grubunuzda yönetici olarak tanıtın, aksi takdirde düzgün çalışmayacağım.\n\nAssistant Username:- @{ASS_USERNAME}\nAssistant ID:- {ASS_ID}",
                     reply_markup=InlineKeyboardMarkup(out[1]),
                 )
             if member.id in ASSIDS:
@@ -123,37 +122,24 @@ async def useradd(_, message: Message):
 
 
 
-@app.on_message(filters.command("start") & filters.private & ~filters.edited)
+@app.on_message(filters.command("muzik") & filters.private & ~filters.edited)
 async def useradd(_, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/4c7025b0b94c0d2b5f94a.jpg",
         caption=f"""**━━━━━━━━━━━━━━━━━━━━━━━━
-💥 ʜᴇʟʟᴏ, ɪ ᴀᴍ ᴀʟᴇxᴀ sᴜᴘᴇʀ ғᴀsᴛ ᴠᴄ ᴘʟᴀʏᴇʀ
-ʙᴏᴛ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘs ᴛᴏ ᴘʟᴀʏ ᴀᴜᴅɪᴏ ᴀɴᴅ ᴠɪᴅᴇᴏ sᴏɴɢ...
-┏━━━━━━━━━━━━━━━━━┓
-┣★ ᴄʀᴇᴀᴛᴏʀ › : [ᴀsᴀᴅ ᴀʟɪ](https://t.me/Dr_Asad_Ali)
-┣★ ᴜᴘᴅᴀᴛᴇs › : [ᴀʟᴇxᴀ sᴇʀᴠᴇʀ](https://t.me/AsadSupport)
-┣★ sᴜᴘᴘᴏʀᴛ › : [ᴀʟᴇxᴀ ᴄʜᴀᴛ](https://t.me/Alexa_Help)
-┣★ ʀᴏᴄᴋsᴏᴘ › : [ɴᴇᴛᴡᴏʀᴋ](https://t.me/Shayri_Music_Lovers)
-┣★ ʙʀᴏᴛʜᴇʀ › : [ᴍʏ ʙʀᴏ](https://t.me/HarshitSharma361)
-┣★ ʜᴇʟᴘ › : ɴᴇᴇᴅ ʜᴇʟᴘ ʀᴜɴ /help
-┗━━━━━━━━━━━━━━━━━┛
-
-💞 ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇsᴛɪᴏɴs ᴛʜᴇɴ
-ᴅᴍ ᴛᴏ ᴍʏ [ʟᴇɢᴇɴᴅ ᴏᴡɴᴇʀ](https://t.me/Dr_Asad_Ali) ...
-━━━━━━━━━━━━━━━━━━━━━━━━**""",
+""",
    reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ ❰ ᴀᴅᴅ ᴀʟᴇxᴀ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ❱ ➕", url=f"https://t.me/Asad_Music_Bot?startgroup=true")
+                        "➕grubuna eklw➕", url=f"https://t.me/MisHarley_bot?startgroup=true")
                 ]
                 
            ]
         ),
     )
 
-@app.on_message(filters.command(["alive", "reload", "alexa"]) & filters.private & ~filters.group & ~filters.edited)
+@app.on_message(filters.command(["alive", "reload", "harley"]) & filters.private & ~filters.group & ~filters.edited)
 async def useradd(_, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/4c7025b0b94c0d2b5f94a.jpg",
@@ -162,27 +148,13 @@ async def useradd(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "💥 ᴊᴏɪɴ ʜᴇʀᴇ ᴀɴᴅ sᴜᴘᴘᴏʀᴛ 💞", url=f"https://t.me/Shayri_Music_Lovers")
+                        "🍂", url=f"https://t.me/ruhauzbeyyy")
                 ]
             ]
         ),
     )
 
 
-@app.on_message(filters.command(["repo", "source"]) & filters.private & ~filters.group & ~filters.edited)
-async def useradd(_, message: Message):
-    await message.reply_photo(
-        photo=f"https://telegra.ph/file/4c7025b0b94c0d2b5f94a.jpg",
-        caption=f"""""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "💥 ᴄʟɪᴄᴋ ᴍᴇ ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ 💞", url=f"https://t.me/Dr_Asad_Ali")
-                ]
-            ]
-        ),
-    )
 
 @app.on_message(filters.command("settings") & filters.group)
 async def settings(_, message: Message):
@@ -211,7 +183,7 @@ async def okaybhai(_, CallbackQuery):
     await CallbackQuery.answer("Going Back ...")
     out = start_pannel()
     await CallbackQuery.edit_message_text(
-        text=f"Thanks for having me in {CallbackQuery.message.chat.title}.\n{MUSIC_BOT_NAME}is alive.\n\nFor any assistance or help, checkout our support group and channel.",
+        text=f"Beni içeri aldığınız için teşekkürler {CallbackQuery.message.chat.title}.\n{MUSIC_BOT_NAME}yaşıyor.\n\nHerhangi bir yardım veya yardım için destek grubumuza ve kanalımıza göz atın.",
         reply_markup=InlineKeyboardMarkup(out[1]),
     )
 
@@ -273,7 +245,7 @@ async def AMS(_, CallbackQuery):
         await CallbackQuery.answer("Changes Saved")
         await remove_nonadmin_chat(chat_id)
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\nSet Commands Mode to **Admins**\n\nNow only Admins present in this group can skip, pause, resume, stop musics.\n\nChanges Done By @{checking}",
+            text=f"{text}\n\nSet Commands Mode to **Admins**\n\NSadece bu grupta bulunan Yöneticiler müzikleri atlayabilir, duraklatabilir, devam ettirebilir, durdurabilir.\n\nTarafından Yapılan Değişiklikler @{checking}",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
 
@@ -308,7 +280,7 @@ async def start_markup_check(_, CallbackQuery):
         else:
             current = "Everyone"
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\n**Group:** {c_title}\n\nCurrently Who Can Use {MUSIC_BOT_NAME}:- **{current}**\n\n**⁉️ What is This?**\n\n**👥 Everyone :-**Anyone can use {MUSIC_BOT_NAME}'s commands(skip, pause, resume etc) present in this group.\n\n**🙍 Admin Only :-**  Only the admins and authorized users can use all commands of {MUSIC_BOT_NAME}.",
+            text=f"{text}\n\n**Group:** {c_title}\n\nŞu Anda Kimler Kullanabilir {MUSIC_BOT_NAME}:- **{current}**\n\n**⁉️ Bu nedir?**\n\n**👥 Herkes :-**Herkes kullanabilir {MUSIC_BOT_NAME}'s Komut(skip, pause, resume etc) present in this group.\n\n**🙍 Yalnızca Yönetici :-**  Yalnızca yöneticiler ve yetkili kullanıcılar aşağıdaki komutların tümünü kullanabilir: {MUSIC_BOT_NAME}.",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     if command == "Dashboard":
