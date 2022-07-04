@@ -126,14 +126,12 @@ async def useradd(_, message: Message):
 async def useradd(_, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/3a6639bb46da830684225.jpg",
-        caption=f"""**
-━━━━━━━━━━━━━━━━━━━━━━━━
-**""", 
+        caption=f"""ultra✅""", 
 
-@app.on_message(filters.command(["alive", "reload", "harley"]) & filters.private & ~filters.group & ~filters.edited)
+@app.on_message(filters.command(["alive", "reload"]) & filters.private & ~filters.group & ~filters.edited)
 async def useradd(_, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/4c7025b0b94c0d2b5f94a.jpg",
+        photo=f"https://telegra.ph/file/350dd06306906710b5511.jpg",
         caption=f"""""",
         reply_markup=InlineKeyboardMarkup(
             [
