@@ -536,6 +536,4 @@ async def start_markup_check(_, CallbackQuery):
         await CallbackQuery.answer(
             f"Bot's Memory Usage: {meme}%", show_alert=True
         )
-    if command == "DIT":
-        diske = psutil.disk_usage("/").percent
-        await CallbackQuery.answer(f"Alexa Disk Usage: {diske}%", show_alert=True)
+ 
