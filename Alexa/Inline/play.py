@@ -319,7 +319,7 @@ def secondary_markup(videoid, user_id):
 
         [
 
-            InlineKeyboardButton(text="💥 ɴᴇᴛᴡᴏʀᴋ 💞", url=f"https://t.me/Shayri_Music_Lovers"),
+            InlineKeyboardButton(text="🍂", url=f"https://t.me/CanliSohbetGruplari"),
 
         ],
 
@@ -331,7 +331,7 @@ def secondary_markup(videoid, user_id):
 
             ),
 
-            InlineKeyboardButton(text="❤️ ᴏᴡɴᴇʀ ❤️", url=f"https://t.me/Dr_Asad_Ali"),
+            InlineKeyboardButton(text="🍃", url=f"https://t.me/ruhsuzbeyyy"),
 
         ],
 
@@ -345,13 +345,13 @@ def secondary_markup2(videoid, user_id):
 
         [
 
-            InlineKeyboardButton(text="💥 ᴀʟᴇxᴀ ᴄʜᴀᴛ 💞⁩", url=f"https://t.me/Alexa_Help"),
+            InlineKeyboardButton(text="🌿⁩", url=f"https://t.me/CanliSohbetGruplari"),
 
         ],
 
         [
 
-            InlineKeyboardButton(text="❤️ sᴜᴘᴘᴏʀᴛ ❤️", url=f"https://t.me/Asad_Support"),
+            InlineKeyboardButton(text="❤️", url=f"https://t.me/CanliSohbetGruplari"),
 
         ],
 
@@ -383,7 +383,7 @@ def primary_markup(videoid, user_id, current_time, total_time):
 
         [
 
-            InlineKeyboardButton(text="💥 ᴀʟᴇxᴀ ᴄʜᴀᴛ 💞", url=f"https://t.me/Alexa_Help"),
+            InlineKeyboardButton(text="🚶", url=f"https://t.me/CanliSohbetGruplari"),
 
         ],
 
@@ -395,7 +395,7 @@ def primary_markup(videoid, user_id, current_time, total_time):
 
             ),
 
-            InlineKeyboardButton(text="❤️ ᴏᴡɴᴇʀ ❤️", url=f"https://t.me/Dr_Asad_Ali"),
+            InlineKeyboardButton(text="👣", url=f"https://t.me/ruhsuzbeyyy"),
 
         ],
 
@@ -421,7 +421,7 @@ def timer_markup(videoid, user_id, current_time, total_time):
 
         [
 
-            InlineKeyboardButton(text="💥 ᴀʟᴇxᴀ ᴄʜᴀᴛ 💞", url=f"https://t.me/Alexa_Help"),
+            InlineKeyboardButton(text="🍃", url=f"https://t.me/MissHarley_bot"),
 
         ],
 
@@ -433,7 +433,7 @@ def timer_markup(videoid, user_id, current_time, total_time):
 
             ),
 
-            InlineKeyboardButton(text="❤️ ᴏᴡɴᴇʀ ❤️", url=f"https://t.me/Dr_Asad_Ali"),
+            InlineKeyboardButton(text="❤️", url=f"https://t.me/CanliSohbetGruplari"),
 
         ],
 
@@ -465,11 +465,11 @@ def audio_markup(videoid, user_id, current_time, total_time):
 
         [
 
-            InlineKeyboardButton(text="💥 ɴᴇᴛᴡᴏʀᴋ 💞", url=f"https://t.me/Shayri_Music_Lovers"),
+            InlineKeyboardButton(text="🍂", url=f"https://t.me/korsanfed"),
 
         ],
 
-        [InlineKeyboardButton(text="❤️ ᴏᴡɴᴇʀ ❤️", url=f"https://t.me/Dr_Asad_Ali")],
+        [InlineKeyboardButton(text="🍃", url=f"https://t.me/CanliSohbetGruplari")],
 
     ]
 
@@ -493,11 +493,11 @@ def audio_timer_markup_start(videoid, user_id, current_time, total_time):
 
         [
 
-            InlineKeyboardButton(text="💥 ᴀʟᴇxᴀ ᴄʜᴀᴛ 💞⁩", url=f"https://t.me/Alexa_Help"),
+            InlineKeyboardButton(text="🍂", url=f"https://t.me/CanliSohbetGruplari"),
 
         ],
 
-        [InlineKeyboardButton(text="❤️ ᴏᴡɴᴇʀ ❤️", url=f"https://t.me/Dr_Asad_Ali")],
+        [InlineKeyboardButton(text="❤️", url=f"https://t.me/CanliSohbetGruplari")],
 
     ]
 
@@ -509,11 +509,11 @@ audio_markup2 = InlineKeyboardMarkup(
 
         [
 
-            InlineKeyboardButton(text="💥 ᴀʟᴇxᴀ ᴄʜᴀᴛ 💞", url=f"https://t.me/Alexa_Help"),
+            InlineKeyboardButton(text="🍃", url=f"https://t.me/CanliSohbetGruplari"),
 
         ],
 
-        [InlineKeyboardButton(text="❤️ ᴏᴡɴᴇʀ ❤️", url=f"https://t.me/Dr_Asad_Ali")],
+        [InlineKeyboardButton(text="🌿", url=f"https://t.me/CanliSohbetGruplari")],
 
     ]
 
