@@ -126,18 +126,9 @@ async def useradd(_, message: Message):
 async def useradd(_, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/4c7025b0b94c0d2b5f94a.jpg",
-        caption=f"""**━━━━━━━━━━━━━━━━━━━━━━━━
-""",
-   reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "➕grubuna eklw➕", url=f"https://t.me/MisHarley_bot?startgroup=true")
-                ]
-                
-           ]
-        ),
-    )
+        caption=f"""
+━━━━━━━━━━━━━━━━━━━━━━━━
+"""
 
 @app.on_message(filters.command(["alive", "reload", "harley"]) & filters.private & ~filters.group & ~filters.edited)
 async def useradd(_, message: Message):
