@@ -500,7 +500,7 @@ async def start_markup_check(_, CallbackQuery):
             await CallbackQuery.edit_message_text(
                 "Fetching Authorised Users... Please Wait"
             )
-            msg = f"**Authorised Users List[AUL]:**\n\n"
+            msg = f"**Yetkili Kullanıcılar Listesi[AUL]:**\n\n"
             for note in _playlist:
                 _note = await get_authuser(
                     CallbackQuery.message.chat.id, note
@@ -538,6 +538,4 @@ async def start_markup_check(_, CallbackQuery):
         )
     if command == "DIT":
         diske = psutil.disk_usage("/").percent
-        await CallbackQuery.answer(
-            f"Alexa Disk Usage: {diske}%", show_alert=True
-        )
+        await CallbackQuery.answer(f"Alexa Disk Usage: {diske}%", show_alert=True)
