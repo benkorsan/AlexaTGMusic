@@ -50,7 +50,7 @@ async def forceclose(_, CallbackQuery):
     query, user_id = callback_request.split("|")
     if CallbackQuery.from_user.id != int(user_id):
         return await CallbackQuery.answer(
-            "You're not allowed to close this.", show_alert=True
+            "Bunu kapatmanıza izin verilmez.", show_alert=True
         )
     await CallbackQuery.message.delete()
     await CallbackQuery.answer()
@@ -72,12 +72,12 @@ async def admin_risghts(_, CallbackQuery):
     if command == "pausecb":
         if not await is_music_playing(chat_id):
             return await CallbackQuery.answer(
-                "Music is already Paused", show_alert=True
+                "Müzik zaten duraklatıldı", show_alert=True
             )
         await music_off(chat_id)
         await pause_stream(chat_id)
         await CallbackQuery.message.reply_text(
-            f"🎧 Voicechat Paused by {CallbackQuery.from_user.mention}!",
+            f"🎧 Sesli sohbet tarafından duraklatıldı {CallbackQuery.from_user.mention}!",
             reply_markup=audio_markup2,
         )
         await CallbackQuery.message.delete()
@@ -90,7 +90,7 @@ async def admin_risghts(_, CallbackQuery):
         await music_on(chat_id)
         await resume_stream(chat_id)
         await CallbackQuery.message.reply_text(
-            f"🎧 Voicechat Resumed by {CallbackQuery.from_user.mention}!",
+            f"🎧 Sesli sohbet tarafından devam ettirildi {CallbackQuery.from_user.mention}!",
             reply_markup=audio_markup2,
         )
         await CallbackQuery.message.delete()
@@ -108,7 +108,7 @@ async def admin_risghts(_, CallbackQuery):
         await remove_active_video_chat(chat_id)
         await stop_stream(chat_id)
         await CallbackQuery.message.reply_text(
-            f"🎧 Voicechat End/Stopped by {CallbackQuery.from_user.mention}!",
+            f"🎧 Sesli sohbet Bitiş / Tarafından Durduruldu {CallbackQuery.from_user.mention}!",
             reply_markup=audio_markup2,
         )
         await CallbackQuery.message.delete()
@@ -123,7 +123,7 @@ async def admin_risghts(_, CallbackQuery):
             await remove_active_chat(chat_id)
             await remove_active_video_chat(chat_id)
             await CallbackQuery.message.reply_text(
-                f"No more music in __Queue__ \n\nLeaving Voice Chat..Button Used By :- {CallbackQuery.from_user.mention}"
+                f"__listede__'da artık müzik yok \n\nSesli Sohbetten Ayrılmak.. Tarafından Kullanılan Düğme :- {CallbackQuery.from_user.mention}"
             )
             await stop_stream(chat_id)
             await CallbackQuery.message.delete()
@@ -174,7 +174,7 @@ async def admin_risghts(_, CallbackQuery):
                 final_output = await CallbackQuery.message.reply_photo(
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"<b>Skipped Voice Chat </b>\n\n🎥<b>Started Playing:</b> [{title[:20]}] \n⏳<b>Duration:</b> {duration_min} \n👤<b>Requested by:</b> {mention}",
+                    caption=f"<b>Atlanan Sesli Sohbet </b>\n\n🎥<b>Oynamaya Başladı:</b> [{title[:20]}] \n⏳<b>Süre:</b> {duration_min} \n👤<b>Talep eden::</b> {mention}",
                 )
                 await start_timer(
                     videoid,
@@ -189,7 +189,7 @@ async def admin_risghts(_, CallbackQuery):
                 afk = videoid
                 await CallbackQuery.answer()
                 mystic = await CallbackQuery.message.reply_text(
-                    "Skipped! Please Wait Changing Video Stream...."
+                    "Atlanır! Lütfen Video Akışını Değiştirmeyi Bekleyin...."
                 )
                 read = (str(videoid)).replace("s1s_", "", 1)
                 s = read.split("_+_")
@@ -200,7 +200,7 @@ async def admin_risghts(_, CallbackQuery):
                         await skip_video_stream(chat_id, videoid, 720, mystic)
                     except Exception as e:
                         return await mystic.edit(
-                            f"Error while changing video stream.\n\nPossible Reason:- {e}"
+                            f"Video akışını değiştirirken hata oluştu.\n\nOlası Sebep:- {e}"
                         )
                     buttons = secondary_markup2(
                         "Smex1", CallbackQuery.from_user.id
@@ -211,7 +211,7 @@ async def admin_risghts(_, CallbackQuery):
                         photo="Utils/Telegram.JPEG",
                         reply_markup=InlineKeyboardMarkup(buttons),
                         caption=(
-                            f"<b>Skipped Video Chat</b>\n\n👤**Requested by:** {mention}"
+                            f"<b>Görüntülü Sohbeti Atladı</b>\n\n👤**Talep eden::** {mention}"
                         ),
                     )
                     await mystic.delete()
@@ -251,7 +251,7 @@ async def admin_risghts(_, CallbackQuery):
                         photo=thumb,
                         reply_markup=InlineKeyboardMarkup(buttons),
                         caption=(
-                            f"<b>Skipped Video Chat</b>\n\n🎥<b>Started Video Playing: </b>[{title[:20]}](https://www.youtube.com/watch?v={videoid}) \n👤**Requested by:** {mention}"
+                            f"<b>Görüntülü Sohbeti Atladı</b>\n\n🎥<b>Video Oynatmayı Başlatma: </b>[{title[:20]}](https://www.youtube.com/watch?v={videoid}) \n👤**Talep eden::** {mention}"
                         ),
                     )
                     os.remove(thumb)
@@ -270,7 +270,7 @@ async def admin_risghts(_, CallbackQuery):
                     "Skipped! Playlist Playing....", show_alert=True
                 )
                 mystic = await CallbackQuery.message.reply_text(
-                    f"**{MUSIC_BOT_NAME} Playlist Function**\n\nDownloading Next Music From Playlist....\n\nButton Used By :- {CallbackQuery.from_user.mention}"
+                    f"**{MUSIC_BOT_NAME} Çalma Listesi İşlevi**\n\nÇalma Listesinden Sonraki Müzikleri İndirme....\n\nTarafından Kullanılan Düğme :- {CallbackQuery.from_user.mention}"
                 )
                 (
                     title,
@@ -279,7 +279,7 @@ async def admin_risghts(_, CallbackQuery):
                     thumbnail,
                 ) = get_yt_info_id(videoid)
                 await mystic.edit(
-                    f"**{MUSIC_BOT_NAME} Downloader**\n\n**Title:** {title[:20]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
+                    f"**{MUSIC_BOT_NAME} İndirici**\n\n**Başlık:** {title[:20]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
                 )
                 downloaded_file = await loop.run_in_executor(
                     None, download, videoid, mystic, title
@@ -309,7 +309,7 @@ async def admin_risghts(_, CallbackQuery):
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
                     caption=(
-                        f"<b>Skipped Voice Chat</b>\n\n🎥<b>Started Playing: </b>[{title[:20]}](https://www.youtube.com/watch?v={videoid}) \n⏳<b>Duration:</b> {duration_min} Mins\n👤**Requested by:** {mention}"
+                        f"<b>Atlanan Sesli Sohbet</b>\n\n🎥<b>Oynamaya Başladı: </b>[{title[:20]}](https://www.youtube.com/watch?v={videoid}) \n⏳<b>Duration:</b> {duration_min} Mins\n👤**Talep eden:** {mention}"
                     ),
                 )
                 os.remove(thumb)
@@ -346,7 +346,7 @@ async def play_playlist(_, CallbackQuery):
     elif smex == "Personal":
         if CallbackQuery.from_user.id != int(user_id):
             return await CallbackQuery.answer(
-                "This is not for you! Play your own playlist", show_alert=True
+                "Bu sizin için değil! Kendi çalma listenizi çalma", show_alert=True
             )
         _playlist = await get_playlist_names(user_id, type)
         third_name = CallbackQuery.from_user.first_name
@@ -357,14 +357,14 @@ async def play_playlist(_, CallbackQuery):
         user_id = CallbackQuery.message.chat.id
         third_name = chat_title
     else:
-        return await CallbackQuery.answer("Error In Playlist.")
+        return await CallbackQuery.answer("Çalma Listesindeki Hata.")
     if CallbackQuery.message.chat.id not in db_mem:
         db_mem[CallbackQuery.message.chat.id] = {}
     try:
         read1 = db_mem[CallbackQuery.message.chat.id]["live_check"]
         if read1:
             return await CallbackQuery.answer(
-                "Live Streaming Playing...Stop it to play playlist",
+                "Canlı Yayın Oynatılıyor... Çalma listesini oynatmak için durdurun",
                 show_alert=True,
             )
         else:
@@ -373,14 +373,14 @@ async def play_playlist(_, CallbackQuery):
         pass
     if not _playlist:
         return await CallbackQuery.answer(
-            f"This User has no playlist on servers.", show_alert=True
+            f"Bu Kullanıcının sunucularda çalma listesi yok.", show_alert=True
         )
     else:
         await CallbackQuery.message.delete()
         mystic = await CallbackQuery.message.reply_text(
-            f"Starting Playlist Of {third_name}.\n\nRequested By:- {CallbackQuery.from_user.first_name}"
+            f"Başlangıç Çalma Listesi {third_name}.\n\nTalep Eden:- {CallbackQuery.from_user.first_name}"
         )
-        msg = f"Queued Playlist:\n\n"
+        msg = f"Sıraya Alınmış Çalma Listesi:\n\n"
         j = 0
         for_t = 0
         for_p = 0
@@ -395,7 +395,7 @@ async def play_playlist(_, CallbackQuery):
                 j += 1
                 for_p = 1
                 msg += f"{j}- {title[:50]}\n"
-                msg += f"Queued Position- {position}\n\n"
+                msg += f"Sıraya Alınmış Konum- {position}\n\n"
                 if videoid not in db_mem:
                     db_mem[videoid] = {}
                 db_mem[videoid]["username"] = CallbackQuery.from_user.mention
@@ -418,7 +418,7 @@ async def play_playlist(_, CallbackQuery):
                     thumbnail,
                 ) = get_yt_info_id(videoid)
                 mystic = await mystic.edit(
-                    f"**{MUSIC_BOT_NAME} Downloader**\n\n**Title:** {title[:20]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
+                    f"**{MUSIC_BOT_NAME} İndirici**\n\n**Başlık:** {title[:20]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
                 )
                 downloaded_file = await loop.run_in_executor(
                     None, download, videoid, mystic, title
@@ -426,7 +426,7 @@ async def play_playlist(_, CallbackQuery):
                 raw_path = await convert(downloaded_file)
                 if not await join_stream(chat_id, raw_path):
                     return await mystic.edit(
-                        "Error Joining Voice Chat. Make sure Voice Chat is Enabled."
+                        "Sesli sohbete katılma hatası. Sesli Sohbet'in Etkin olduğundan emin olun."
                     )
                 theme = await check_theme(chat_id)
                 chat_title = await specialfont_to_normal(chat_title)
@@ -453,7 +453,7 @@ async def play_playlist(_, CallbackQuery):
                 got_queue.append(to_append)
                 await music_on(chat_id)
                 await add_active_chat(chat_id)
-                cap = f"🎥<b>Playing:</b>[{title[:20]}](https://www.youtube.com/watch?v={videoid}) \n💡<b>Info:</b> [Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤**Requested by:** {CallbackQuery.from_user.mention}"
+                cap = f"🎥<b>Oynamak:</b>[{title[:20]}](https://www.youtube.com/watch?v={videoid}) \n💡<b>Info:</b> [Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤**Talep eden::** {CallbackQuery.from_user.mention}"
                 final_output = await CallbackQuery.message.reply_photo(
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
@@ -463,7 +463,7 @@ async def play_playlist(_, CallbackQuery):
         await mystic.delete()
         if for_p == 1:
             m = await CallbackQuery.message.reply_text(
-                "Pasting Queued Playlist to Bin"
+                "Sıraya Alınmış Çalma Listesini Çöp Kutusuna Yapıştırma"
             )
             link = await paste_queue(msg)
             preview = link + "/preview.png"
@@ -484,7 +484,7 @@ async def play_playlist(_, CallbackQuery):
                 await m.delete()
         else:
             await CallbackQuery.message.reply_text(
-                "Only 1 Music in Playlist.. No more music to add in queue."
+                "Çalma Listesinde Sadece 1 Müzik .. Sıraya eklenecek müzik yok."
             )
         if for_t == 1:
             await start_timer(
@@ -511,14 +511,14 @@ async def group_playlist(_, CallbackQuery):
         )
         if not a.can_manage_voice_chats:
             return await CallbackQuery.answer(
-                "You don't have the required permission to perform this action.\nPermission: MANAGE VOICE CHATS",
+                "Bu eylemi gerçekleştirmek için gerekli izne sahip değilsiniz.\nİzin: SESLİ SOHBETLERİ YÖNETİN",
                 show_alert=True,
             )
         user_id = CallbackQuery.message.chat.id
     _count = await get_playlist_names(user_id, genre)
     if not _count:
         sex = await CallbackQuery.message.reply_text(
-            f"Welcome To {MUSIC_BOT_NAME}'s Playlist Feature.\n\nGenerating Your  Playlist In Database...Please wait.\n\nGenre:- {genre}"
+            f"Welcome To {MUSIC_BOT_NAME}'s Çalma Listesi Özelliği.\n\nVeritabanında Çalma Listenizi Oluşturma... Lütfen bekleyin.\n\nTarz:- {genre}"
         )
         await asyncio.sleep(2)
         await sex.delete()
@@ -528,7 +528,7 @@ async def group_playlist(_, CallbackQuery):
     count = int(count)
     if count == 50:
         return await CallbackQuery.answer(
-            "Sorry! You can only have 50 music in a playlist.",
+            "Pardon! Bir çalma listesinde yalnızca 50 müzik olabilir.",
             show_alert=True,
         )
     loop = asyncio.get_event_loop()
@@ -538,7 +538,7 @@ async def group_playlist(_, CallbackQuery):
     title = title[:50]
     if _check:
         return await CallbackQuery.message.reply_text(
-            f"{CallbackQuery.from_user.mention}, Its already in the Playlist!"
+            f"{CallbackQuery.from_user.mention}, Zaten Çalma Listesi'nde!"
         )
     assis = {
         "videoid": videoid,
@@ -591,7 +591,7 @@ async def check_playlist(_, CallbackQuery):
         if await isPreviewUp(preview):
             await CallbackQuery.message.reply_photo(
                 photo=preview,
-                caption=f"This is Playlist of {user_name}.",
+                caption=f"Bu çalma listesi {user_name}.",
                 quote=False,
                 reply_markup=InlineKeyboardMarkup(buttons),
             )
@@ -617,7 +617,7 @@ async def del_playlist(_, CallbackQuery):
         )
         if not a.can_manage_voice_chats:
             return await CallbackQuery.answer(
-                "You don't have the required permission to perform this action.\nPermission: MANAGE VOICE CHATS",
+                "Bu eylemi gerçekleştirmek için gerekli izne sahip değilsiniz.\nİzin: SESLİ SOHBETLERİ YÖNETİN",
                 show_alert=True,
             )
         user_id = CallbackQuery.message.chat.id
