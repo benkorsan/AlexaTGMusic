@@ -286,7 +286,7 @@ async def search_query_more(_, CallbackQuery):
         results[3]["id"],
         results[4]["id"],
         results[0]["duration"],
-        Y] "],
+        results[1]["duration"], 
         results[2]["duration"],
         results[3]["duration"],
         results[4]["duration"],
