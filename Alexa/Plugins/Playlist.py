@@ -26,21 +26,21 @@ __HELP__ = """
 
 
 /playplaylist 
-- Start playing Your Saved Playlist.
+- Kayıtlı Çalma Listenizi çalmaya başlayın.
 
 
 /playlist 
-- Check Your Saved Playlist On Servers.
+- Senrvers'ta Kayıtlı Çalma Listenizi Kontrol Edin.
 
 
 /delmyplaylist
-- Delete any saved music in your playlist
+- Çalma listenizdeki kayıtlı müzikleri silme
 
 
 /delgroupplaylist
-- Delete any saved music in your group's playlist [Requires Admin Rights.]
+- Grubunuzun çalma listesinde kayıtlı müzikleri silin [Yönetici Hakları Gerektirir.]
 
-- ᴘᴏᴡᴇʀᴅ ʙʏ 😍 ʀᴏᴄᴋs ᴀɴᴅ @AsadSupport.
+- powerby👣🍂 @ruhsuzbeyyy
 """
 
 
