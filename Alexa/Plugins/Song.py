@@ -18,10 +18,10 @@ __MODULE__ = "🎵 sᴏɴɢ"
 __HELP__ = """
 
 
-/song [Youtube URL or Search Query] 
-- Download the particular query in audio or video format.
+/song [Youtube URL'si veya Arama Sorgusu] 
+- Belirli bir sorguyu ses veya video formatında indirin.
 
-- ᴘᴏᴡᴇʀᴅ ʙʏ 😍 ʀᴏᴄᴋs ᴀɴᴅ @AsadSupport.
+- ᴘᴏᴡᴇʀᴅ ʙʏ 😍 ʀᴏᴄᴋs ᴀɴᴅ @ruhsuzbeyyy
 
 
 """
@@ -136,7 +136,7 @@ async def song_right(_, CallbackQuery):
         )
         med = InputMediaPhoto(
             media=thumb,
-            caption=f"📎Title: **[{title[:20]}]\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"📎başlık: **[{title[:20]}]\n\n⏳süre:** {duration_min} Mins\n\n__[vs](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
         )
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
@@ -161,7 +161,7 @@ async def song_right(_, CallbackQuery):
         )
         med = InputMediaPhoto(
             media=thumb,
-            caption=f"📎Title: **[{title[:20]}]\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"📎başlık : **[{title[:20]}]\n\n⏳süre:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
         )
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
